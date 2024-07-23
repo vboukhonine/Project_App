@@ -39,19 +39,28 @@ def recipe(recipe_id):
     except Exception as e:
         print(e)
         return "An error occurred. Please try again."
+
+
 @app.route("/vegan")
 def vegan_recipes():
-    url = f"https://api.spoonacular.com/recipes/complexSearch?diet=vegan&apiKey={API_KEY}"
+    url = (
+        f"https://api.spoonacular.com/recipes/complexSearch?diet=vegan&apiKey={API_KEY}"
+    )
     response = requests.get(url)
     data = response.json()
-    return render_template("index.html", recipes=data)
+    return render_template("index.html", recipes=data["results"])
+
 
 @app.route("/vegetarian")
 def vegetarian_recipes():
     url = f"https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&apiKey={API_KEY}"
     response = requests.get(url)
     data = response.json()
-    return render_template("index.html", recipes=data)
+    return render_template("index.html", recipes=data["results"])
+
+@app.route("/about_us")
+def about_us():
+    return render_template("about_us.html")
 
 
 if __name__ == "__main__":
