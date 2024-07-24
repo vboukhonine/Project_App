@@ -1,14 +1,43 @@
 body {
-    background-image: url("/static/images/recipes.png");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: #f0d2d2; 
     font-family: Arial, sans-serif;
+}
+
+.recipe-img {
+    margin: 0 auto;
 }
 
 .container {
     background: rgba(255, 255, 255, 0.8); 
     padding: 20px;
     border-radius: 10px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.recipe-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.form-group {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
 }
