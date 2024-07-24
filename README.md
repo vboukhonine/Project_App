@@ -42,6 +42,9 @@ Press CTRL+C to quit
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 643-782-328
+   
+# Links to GitHub repository and Trello board
+
 
 # Project App
 Project App is a useful web application that makes planning and finding meals easy and fun. 
