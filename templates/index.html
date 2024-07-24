@@ -1,43 +1,60 @@
-{% extends "base.html" %} {% block content %}
-<header class="text-center my-5">
-  <h1>Welcome to Healthy Application</h1>
-  <h2>Healthy Food Planner Recipes</h2>
-</header>
-
-<form action="{{ url_for('search') }}" method="POST" class="mb-5">
-  <div class="form-group">
-    <input
-      type="text"
-      class="form-control"
-      name="query"
-      placeholder="Search for recipes..."
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
     />
-  </div>
-  <button type="submit" class="btn btn-primary btn-block">Search</button>
-</form>
+</head>
+<body>
+  {% extends "base.html" %} {% block content %}
+  <header class="text-center my-5">
+    <h1>Welcome to Healthy Application</h1>
+    <h2>Healthy Food Planner Recipes</h2>
+  </header>
 
-{% if recipes %}
-<h2 class="text-center">Recipes</h2>
-<div class="row">
-  {% for recipe in recipes %}
-  <div class="col-md-4">
-    <div class="card mb-4">
-      <img
-        src="{{ recipe['image'] }}"
-        class="card-img-top"
-        alt="{{ recipe['title'] }}"
+  <div class="image-container">
+    <img class="recipe-img" src="/static/images/recipe-img.jpg" alt="image of ingredients">
+  </div>
+
+  <form action="{{ url_for('search') }}" method="POST" class="search-form">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        name="query"
+        placeholder="Search for recipes..."
       />
-      <div class="card-body">
-        <a href="{{ url_for('recipe', recipe_id=recipe.id) }}"
-          >{{ recipe.title }}</a
-        >
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Search</button>
+  </form>
+  
+  {% if recipes %}
+  <h2 class="text-center" style="margin-top: 50px;">Recipes</h2>
+  <div class="row">
+    {% for recipe in recipes %}
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img
+          src="{{ recipe['image'] }}"
+          class="card-img-top"
+          alt="{{ recipe['title'] }}"
+        />
+        <div class="card-body">
+          <a href="{{ url_for('recipe', recipe_id=recipe.id) }}"
+            >{{ recipe.title }}</a
+          >
+        </div>
       </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
-<br />
-<div class="text-center">
-  <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Go Back</a>
-</div>
-{% endif %} {% endblock %}
+  <div class="text-center">
+    <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Go Back</a>
+  </div>
+  {% endif %} {% endblock %}
+</body>
+</html>
