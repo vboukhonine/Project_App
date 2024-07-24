@@ -58,7 +58,7 @@ The main goal of Project App is to provide an all-in-one solution for meal plann
 By using the Spoonacular API, we make sure users have access to a huge variety of recipes that are regularly updated and cover a wide range of dietary needs and preferences. 
 This project basically help:
 
-> Help users find recipes that match their dietary preferences and restrictions.
-> Provide detailed recipe information to ensure successful cooking experiences.
-> Inspire users to try new recipes and improve their cooking skills.
+- Help users find recipes that match their dietary preferences and restrictions.
+- Provide detailed recipe information to ensure successful cooking experiences.
+- Inspire users to try new recipes and improve their cooking skills.
 
