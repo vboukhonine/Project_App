@@ -44,7 +44,7 @@ def recipe(recipe_id):
 @app.route("/vegan")
 def vegan_recipes():
     url = (
-        f"https://api.spoonacular.com/recipes/complexSearch?diet=vegan&apiKey={API_KEY}"
+        f"https://api.spoonacular.com/recipes/complexSearch?number=20&diet=vegan&apiKey={API_KEY}"
     )
     response = requests.get(url)
     data = response.json()
@@ -53,7 +53,7 @@ def vegan_recipes():
 
 @app.route("/vegetarian")
 def vegetarian_recipes():
-    url = f"https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&apiKey={API_KEY}"
+    url = f"https://api.spoonacular.com/recipes/complexSearch?number=20&diet=vegetarian&apiKey={API_KEY}"
     response = requests.get(url)
     data = response.json()
     return render_template("index.html", recipes=data["results"])
@@ -61,5 +61,13 @@ def vegetarian_recipes():
 @app.route("/about_us")
 def about_us():
     return render_template("about_us.html")
+
+@app.route("/random_recipes")
+def random_recipes():
+    url = f"https://api.spoonacular.com/recipes/random?number=20&apiKey={API_KEY}"
+    response = requests.get(url)
+    data = response.json()
+    return render_template("index.html", recipes=data["recipes"])
+
 
 app.run(debug=True)

@@ -7,7 +7,7 @@
     {{ bootstrap.load_css() }}
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='css/styles.css') }}"
+      href="{{ url_for('static', filename='style.css') }}"
     />
   </head>
   <body>
@@ -58,8 +58,13 @@
                     >Vegetarian Recipes</a
                   >
                 </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">All Categories</a></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="{{ url_for('random_recipes') }}"
+                    >Random Recipes</a
+                  >
+                </li>
               </ul>
             </li>
 

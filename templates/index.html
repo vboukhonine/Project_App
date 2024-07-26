@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
-    />
-</head>
-<body>
+
   {% extends "base.html" %} {% block content %}
   <header class="text-center my-5">
-    <h1>Welcome to Healthy Application</h1>
-    <h2>Healthy Food Planner Recipes</h2>
+    <h1>Welcome to Healthy Food Planner Application</h1>
+    <h2>Recipe Finder</h2>
   </header>
 
   <div class="image-container">
@@ -56,5 +45,4 @@
     <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Go Back</a>
   </div>
   {% endif %} {% endblock %}
-</body>
-</html>
+
