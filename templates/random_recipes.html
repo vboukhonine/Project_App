@@ -7,6 +7,7 @@
     {{ bootstrap.load_css() }}
 </head>
 <body>
+    {% extends "base.html" %} {% block content %}
     <div class="container">
         {% if recipes %}
           <h2 class="text-center" style="margin-top: 50px;">Random Recipes</h2>
@@ -29,5 +30,6 @@
           <p>No recipes found.</p>
         {% endif %}
     </div>
+    {% endblock %}
 </body>
 </html>
