@@ -46,6 +46,7 @@ Press CTRL+C to quit
 # Links to GitHub repository and Trello board
 https://github.com/vboukhonine/Project_App.git
 https://trello.com/invite/b/669c99c78f79d09dc01368b5/ATTIcbbc8dba4b9ce7b7304ef7ace358abbaA136AB19/cst-205-group
+https://docs.google.com/presentation/d/1pvaHUsSqtYIPeNCYn0uhWv3G6G_dcrIjUSVWgK19_2A/edit#slide=id.p
 
 # Project App
 Project App is a useful web application that makes planning and finding meals easy and fun. 
