@@ -1,6 +1,15 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="container mt-5">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  {{ bootstrap.load_css() }}
+</head>
+<body>
+  {% extends "base.html" %}
+  {% block content %}
+  <div class="container mt-5">
   <h1>About Us</h1>
   <p>
     Welcome to Recipe Finder, your go-to application for discovering delicious recipes tailored to your taste and dietary preferences. With a user-friendly interface, our app allows you to search for recipes by keyword, filter results by various categories, and access detailed information about each recipe. Each recipe includes a comprehensive list of ingredients, step-by-step preparation instructions, and nutritional information, ensuring you have everything you need to create a delightful meal.
@@ -9,5 +18,7 @@
   <p>
     Our mission is to make meal planning easy and enjoyable by providing you with a vast collection of recipes to explore. Whether you're a seasoned chef or a cooking novice, Recipe Finder is here to inspire your culinary journey.
   </p>
-</div>
-{% endblock %}
+  </div>
+  {% endblock %}
+</body>
+</html>
