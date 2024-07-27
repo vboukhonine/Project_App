@@ -11,7 +11,8 @@ Date: 07/26/2024
 
 Who Worked on What:
 Mark and Vera worked on routes in the backend and setting up a simple UI. Mark made the index.html and search funcitonality. 
-Vera worked on the recipe.html to allow users to view recipe info. Diego worked on routes in the backend as well making fixes. 
+Vera worked on the recipe.html to allow users to view recipe info. Diego worked on routes in the backend as well making fixes and
+created the random_recipes.html.
 """
 
 from flask import Flask, render_template, redirect, url_for, request
@@ -38,7 +39,7 @@ def index():
 @app.route("/search", methods=["POST"])
 def search():
     query = request.form["query"]
-    url = f"https://api.spoonacular.com/recipes/complexSearch?query={query}&apiKey={API_KEY}"
+    url = f"https://api.spoonacular.com/recipes/complexSearch?number=20&query={query}&apiKey={API_KEY}"
     response = requests.get(url)
     data = response.json()
     return render_template("index.html", recipes=data["results"])
@@ -62,7 +63,7 @@ def recipe(recipe_id):
 @app.route("/vegan")
 def vegan_recipes():
     url = (
-        f"https://api.spoonacular.com/recipes/complexSearch?diet=vegan&apiKey={API_KEY}"
+        f"https://api.spoonacular.com/recipes/complexSearch?number=20&diet=vegan&apiKey={API_KEY}"
     )
     response = requests.get(url)
     data = response.json()
@@ -72,7 +73,7 @@ def vegan_recipes():
 # Filters results by categories
 @app.route("/gluten_free")
 def gluten_free_recipes():
-    url = f"https://api.spoonacular.com/recipes/complexSearch?diet=gluten+free&apiKey={API_KEY}"
+    url = f"https://api.spoonacular.com/recipes/complexSearch?number=20&diet=gluten+free&apiKey={API_KEY}"
     response = requests.get(url)
     data = response.json()
     return render_template("index.html", recipes=data["results"])
@@ -87,7 +88,7 @@ def about_us():
 # Find random recipes and displays them
 @app.route("/random_recipes")
 def random_recipes():
-    url = f"https://api.spoonacular.com/recipes/random?number=10&apiKey={API_KEY}"
+    url = f"https://api.spoonacular.com/recipes/random?number=20&apiKey={API_KEY}"
     response = requests.get(url)
     data = response.json()
     return render_template("random_recipes.html", recipes=data["recipes"])
