@@ -12,7 +12,7 @@ Date: 07/26/2024
 Who Worked on What:
 Mark and Vera worked on routes in the backend and setting up a simple UI. Mark made the index.html and search funcitonality. 
 Vera worked on the recipe.html to allow users to view recipe info. Diego worked on routes in the backend as well making fixes and
-created the random_recipes.html.
+created the random_recipes.html along with adding styling with CSS.
 """
 
 from flask import Flask, render_template, redirect, url_for, request
