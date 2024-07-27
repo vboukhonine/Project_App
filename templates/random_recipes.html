@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {{ bootstrap.load_css() }}
+</head>
+<body>
+    {% extends "base.html" %} {% block content %}
+    <div class="container">
+        {% if recipes %}
+          <h2 class="text-center" style="margin-top: 50px;">Random Recipes</h2>
+          <div class="row">
+            {% for recipe in recipes %}
+              <div class="col-md-4">
+                <div class="card mb-4">
+                  <img src="{{ recipe['image'] }}" class="card-img-top" alt="{{ recipe['title'] }}" />
+                  <div class="card-body">
+                    <a href="{{ url_for('recipe', recipe_id=recipe.id) }}">{{ recipe.title }}</a>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="text-center">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Go Back</a>
+          </div>
+        {% else %}
+          <p>No recipes found.</p>
+        {% endif %}
+    </div>
+    {% endblock %}
+</body>
+</html>
