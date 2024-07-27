@@ -44,16 +44,16 @@ def recipe(recipe_id):
 @app.route("/vegan")
 def vegan_recipes():
     url = (
-        f"https://api.spoonacular.com/recipes/complexSearch?number=20&diet=vegan&apiKey={API_KEY}"
+        f"https://api.spoonacular.com/recipes/complexSearch?diet=vegan&apiKey={API_KEY}"
     )
     response = requests.get(url)
     data = response.json()
     return render_template("index.html", recipes=data["results"])
 
 
-@app.route("/vegetarian")
-def vegetarian_recipes():
-    url = f"https://api.spoonacular.com/recipes/complexSearch?number=20&diet=vegetarian&apiKey={API_KEY}"
+@app.route("/gluten_free")
+def gluten_free_recipes():
+    url = f"https://api.spoonacular.com/recipes/complexSearch?diet=gluten+free&apiKey={API_KEY}"
     response = requests.get(url)
     data = response.json()
     return render_template("index.html", recipes=data["results"])
@@ -64,10 +64,10 @@ def about_us():
 
 @app.route("/random_recipes")
 def random_recipes():
-    url = f"https://api.spoonacular.com/recipes/random?number=20&apiKey={API_KEY}"
+    url = f"https://api.spoonacular.com/recipes/random?number=10&apiKey={API_KEY}"
     response = requests.get(url)
     data = response.json()
-    return render_template("index.html", recipes=data["recipes"])
+    return render_template("random_recipes.html", recipes=data[""])
 
-
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)

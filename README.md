@@ -50,7 +50,7 @@ https://trello.com/invite/b/669c99c78f79d09dc01368b5/ATTIcbbc8dba4b9ce7b7304ef7a
 # Project App
 Project App is a useful web application that makes planning and finding meals easy and fun. 
 It uses the Spoonacular API to give users a huge collection of recipes for different dietary preferences and tastes.
-Whether you're looking for vegan dishes, vegetarian meals, or just want to try something new.
+Whether you're looking for vegan dishes, gluten free meals, or just want to try something new.
 
 # Project Description
 With a simple interface, Project App lets users search for recipes by keyword, filter results by categories, and view detailed information about each recipe. 
