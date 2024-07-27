@@ -67,7 +67,7 @@ def random_recipes():
     url = f"https://api.spoonacular.com/recipes/random?number=10&apiKey={API_KEY}"
     response = requests.get(url)
     data = response.json()
-    return render_template("random_recipes.html", recipes=data[""])
+    return render_template("random_recipes.html", recipes=data["recipes"])
 
 if __name__ == "__main__":
     app.run(debug=True)
